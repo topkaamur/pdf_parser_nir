@@ -1,0 +1,27 @@
+{
+  "source_file": "data/input/sample.pdf",
+  "strategy": "stream",
+  "document": {
+    "version": "1.4",
+    "metadata": {},
+    "num_pages": 1,
+    "pages": [
+      {
+        "number": 1,
+        "width": 612.0,
+        "height": 792.0,
+        "text": "Hello World",
+        "text_blocks": [
+          {
+            "text": "Hello World",
+            "x": 100.0,
+            "y": 700.0,
+            "font_name": "F1",
+            "font_size": 12.0
+          }
+        ],
+        "tables": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "input_file": "data/input/sample.pdf",
+  "strategy": "stream",
+  "extract_text": true,
+  "extract_tables": true,
+  "output_file": "data/output/result.json"
+}

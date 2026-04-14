@@ -1,0 +1,211 @@
+{
+  "damaged_trailer.pdf": {
+    "file_size_kb": 19.7,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 851.699,
+      "min_time_ms": 814.702,
+      "max_time_ms": 898.148,
+      "peak_mem_kb": 534.4,
+      "num_pages": 10,
+      "text_length": 18531,
+      "num_objects": 27
+    },
+    "xref": {
+      "success": false,
+      "avg_time_ms": 92.203,
+      "min_time_ms": 77.836,
+      "max_time_ms": 120.929,
+      "peak_mem_kb": 64.5,
+      "num_pages": 0,
+      "text_length": 0,
+      "num_objects": 0,
+      "error": "Cannot find document catalog"
+    }
+  },
+  "damaged_xref.pdf": {
+    "file_size_kb": 19.7,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 821.285,
+      "min_time_ms": 755.575,
+      "max_time_ms": 891.584,
+      "peak_mem_kb": 502.3,
+      "num_pages": 10,
+      "text_length": 18531,
+      "num_objects": 27
+    },
+    "xref": {
+      "success": false,
+      "avg_time_ms": 0.095,
+      "min_time_ms": 0.08,
+      "max_time_ms": 0.122,
+      "peak_mem_kb": 3.7,
+      "num_pages": 0,
+      "text_length": 0,
+      "num_objects": 0,
+      "error": "Invalid startxref value: b'19370XXXXXXX'"
+    }
+  },
+  "large_100p.pdf": {
+    "file_size_kb": 252.3,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 9275.407,
+      "min_time_ms": 9098.051,
+      "max_time_ms": 9499.198,
+      "peak_mem_kb": 5297.2,
+      "num_pages": 104,
+      "text_length": 273366,
+      "num_objects": 215
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 10149.191,
+      "min_time_ms": 9732.929,
+      "max_time_ms": 10496.247,
+      "peak_mem_kb": 5943.2,
+      "num_pages": 104,
+      "text_length": 273366,
+      "num_objects": 215
+    }
+  },
+  "medium_10p.pdf": {
+    "file_size_kb": 19.7,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 784.598,
+      "min_time_ms": 756.031,
+      "max_time_ms": 821.022,
+      "peak_mem_kb": 502.0,
+      "num_pages": 10,
+      "text_length": 18531,
+      "num_objects": 27
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 898.795,
+      "min_time_ms": 859.197,
+      "max_time_ms": 937.397,
+      "peak_mem_kb": 559.6,
+      "num_pages": 10,
+      "text_length": 18531,
+      "num_objects": 27
+    }
+  },
+  "medium_30p.pdf": {
+    "file_size_kb": 67.9,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 2502.802,
+      "min_time_ms": 2404.516,
+      "max_time_ms": 2600.704,
+      "peak_mem_kb": 1462.0,
+      "num_pages": 31,
+      "text_length": 66699,
+      "num_objects": 69
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 2758.505,
+      "min_time_ms": 2691.42,
+      "max_time_ms": 2794.158,
+      "peak_mem_kb": 1643.1,
+      "num_pages": 31,
+      "text_length": 66699,
+      "num_objects": 69
+    }
+  },
+  "multiobj_50p.pdf": {
+    "file_size_kb": 97.0,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 3494.21,
+      "min_time_ms": 3350.539,
+      "max_time_ms": 3745.32,
+      "peak_mem_kb": 2014.3,
+      "num_pages": 50,
+      "text_length": 82817,
+      "num_objects": 107
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 3900.81,
+      "min_time_ms": 3796.514,
+      "max_time_ms": 4042.469,
+      "peak_mem_kb": 2300.6,
+      "num_pages": 50,
+      "text_length": 82817,
+      "num_objects": 107
+    }
+  },
+  "small_1p.pdf": {
+    "file_size_kb": 2.7,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 161.03,
+      "min_time_ms": 143.89,
+      "max_time_ms": 191.946,
+      "peak_mem_kb": 126.7,
+      "num_pages": 1,
+      "text_length": 2590,
+      "num_objects": 9
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 202.854,
+      "min_time_ms": 185.901,
+      "max_time_ms": 215.888,
+      "peak_mem_kb": 140.0,
+      "num_pages": 1,
+      "text_length": 2590,
+      "num_objects": 9
+    }
+  },
+  "table_heavy_20p.pdf": {
+    "file_size_kb": 25.9,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 773.129,
+      "min_time_ms": 734.017,
+      "max_time_ms": 831.631,
+      "peak_mem_kb": 424.9,
+      "num_pages": 20,
+      "text_length": 7782,
+      "num_objects": 47
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 964.648,
+      "min_time_ms": 936.07,
+      "max_time_ms": 1001.814,
+      "peak_mem_kb": 525.2,
+      "num_pages": 20,
+      "text_length": 7782,
+      "num_objects": 47
+    }
+  },
+  "xlarge_500p.pdf": {
+    "file_size_kb": 1307.4,
+    "stream": {
+      "success": true,
+      "avg_time_ms": 48820.781,
+      "min_time_ms": 47554.593,
+      "max_time_ms": 50166.644,
+      "peak_mem_kb": 29035.8,
+      "num_pages": 524,
+      "text_length": 1475862,
+      "num_objects": 1055
+    },
+    "xref": {
+      "success": true,
+      "avg_time_ms": 54260.628,
+      "min_time_ms": 51617.212,
+      "max_time_ms": 55862.78,
+      "peak_mem_kb": 32349.6,
+      "num_pages": 524,
+      "text_length": 1475862,
+      "num_objects": 1055
+    }
+  }
+}

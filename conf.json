@@ -1,0 +1,8 @@
+{
+    "input_file": "My_thesis.pdf",
+    "strategy": "xref",
+    "extract_text": true,
+    "extract_tables": true,
+    "output_file": "out.json"
+  }
+  
