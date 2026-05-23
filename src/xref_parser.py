@@ -257,7 +257,7 @@ class XRefPdfParser(PdfParserBase):
             return {}
 
         metadata = {}
-        for key in ("Title", "Author", "Subject", "Creator", "Producer"):
+        for key in ("Title", "Author", "Subject", "Keywords", "Creator", "Producer"):
             val = info.get(key)
             if val is not None:
                 if hasattr(val, "text"):

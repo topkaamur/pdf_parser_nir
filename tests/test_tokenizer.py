@@ -272,6 +272,13 @@ class TestTokenizerStreamData:
         result = t.read_stream_data(d)
         assert b"Hello" in result or result == b"Hello"
 
+    def test_read_stream_with_length_preserves_binary_newline(self):
+        data = b"<< /Length 4 >> stream\nABC\nendstream"
+        t = PdfTokenizer(data)
+        d = t.read_dictionary()
+        result = t.read_stream_data(d)
+        assert result == b"ABC\n"
+
     def test_read_stream_without_length(self):
         data = b"<< >> stream\nSome data here\nendstream"
         t = PdfTokenizer(data)

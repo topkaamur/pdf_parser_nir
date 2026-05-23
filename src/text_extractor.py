@@ -141,6 +141,9 @@ class ContentStreamTokenizer:
         if ch == ord(">") and self.pos + 1 < len(self.data) and self.data[self.pos + 1] == ord(">"):
             self.pos += 2
             return ">>"
+        if ch == ord(">"):
+            self.pos += 1
+            return chr(ch)
         if ch == ord("["):
             self.pos += 1
             return "["

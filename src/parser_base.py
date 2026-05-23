@@ -69,17 +69,27 @@ class PdfParserBase(ABC):
             if f == "FlateDecode":
                 try:
                     data = zlib.decompress(data)
-                except zlib.error:
+                except zlib.error as first_error:
                     try:
                         data = zlib.decompress(data, -15)
-                    except zlib.error:
-                        pass
+                    except zlib.error as second_error:
+                        self._record_decode_warning(
+                            "FlateDecode failed: "
+                            f"{first_error}; raw deflate failed: {second_error}"
+                        )
             elif f == "ASCIIHexDecode":
                 data = self._decode_ascii_hex(data)
             elif f == "ASCII85Decode":
                 data = self._decode_ascii85(data)
 
         return data
+
+    def _record_decode_warning(self, message: str) -> None:
+        warnings = getattr(self, "decode_warnings", None)
+        if warnings is None:
+            warnings = []
+            setattr(self, "decode_warnings", warnings)
+        warnings.append(message)
 
     @staticmethod
     def _decode_ascii_hex(data: bytes) -> bytes:

@@ -69,6 +69,12 @@ class TestContentStreamTokenizer:
         token = tok.read_token()
         assert token == "<48656C6C6F>"
 
+    def test_standalone_greater_than_advances(self):
+        tok = ContentStreamTokenizer(b"> Tj")
+        assert tok.read_token() == ">"
+        assert tok.pos == 1
+        assert tok.read_token() == "Tj"
+
     def test_read_array_tokens(self):
         tok = ContentStreamTokenizer(b"[(Hello) -50 (World)] TJ")
         tokens = []

@@ -1,8 +1,6 @@
 {
-    "input_file": "My_thesis.pdf",
-    "strategy": "xref",
-    "extract_text": true,
-    "extract_tables": true,
-    "output_file": "out.json"
-  }
-  
+  "input_file": "vkr_examples/vkr1.pdf",
+  "strategy": "auto",
+  "extract_tables": false,
+  "output_file": "data/output/vkr1.report.json"
+}

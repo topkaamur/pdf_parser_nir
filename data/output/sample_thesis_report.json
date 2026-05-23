@@ -1,0 +1,312 @@
+{
+  "source_file": "vkr_examples/vkr1.pdf",
+  "strategy": "xref",
+  "passed": true,
+  "summary": {
+    "pass": 23,
+    "fail": 0,
+    "warn": 2,
+    "manual": 1
+  },
+  "results": [
+    {
+      "rule_id": "document.not_empty",
+      "title": "Document content",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The PDF contains pages and extractable text.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "document.page_count",
+      "title": "Page count",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The document has 191 pages.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.required_order",
+      "title": "Required thesis structure",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Required sections were found in the expected order.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "document.empty_pages",
+      "title": "Empty pages",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "No empty pages were detected.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.title_page",
+      "title": "Title page",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The first page looks like an SPbPU title page.",
+      "page": 1,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.title_page_number",
+      "title": "Title page numbering",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "No visible page number was detected on the title page.",
+      "page": 1,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.chapters",
+      "title": "Main chapters",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Main chapters or numbered sections were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.appendix",
+      "title": "Appendices",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Appendix section was found.",
+      "page": 8,
+      "evidence": "Приложение 1. Руководство по настройке и запуску разработанной системы 119"
+    },
+    {
+      "rule_id": "summary.presence",
+      "title": "Abstract block",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Abstract, Russian keywords and English keywords were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "summary.keywords_ru",
+      "title": "Russian keywords",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Keyword phrase count is valid: 4.",
+      "page": 4,
+      "evidence": "КЛЮЧЕВЫЕ СЛОВА: АВТОМАТИЗИРОВАННОЕ ТЕСТИРОВАНИЕ, LLM,"
+    },
+    {
+      "rule_id": "summary.keywords_en",
+      "title": "English keywords",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Keyword phrase count is valid: 4.",
+      "page": 4,
+      "evidence": "KEYWORDS: AUTOMATED TESTING, LLM, RAG, CI."
+    },
+    {
+      "rule_id": "summary.abstract_length",
+      "title": "Abstract length",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Russian abstract length is within 1000-1500 chars: 1385.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "contents.required_items",
+      "title": "Contents items",
+      "category": "contents",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Contents and main rubric markers were found.",
+      "page": 6,
+      "evidence": "СОДЕРЖАНИЕ"
+    },
+    {
+      "rule_id": "contents.page_numbers",
+      "title": "Contents page numbers",
+      "category": "contents",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Contents entries include page numbers.",
+      "page": 6,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.page_size",
+      "title": "A4 page size",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "All pages match A4 within tolerance.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.margins",
+      "title": "Page margins",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Coarse margin check found no obvious problems.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.font_size",
+      "title": "Main font size",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Dominant font size is close to 14 pt: 14.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.line_spacing",
+      "title": "Line spacing",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "low",
+      "message": "Typical line gap looks like 1.5 spacing for 14 pt text: 20.88 pt.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "objects.captions",
+      "title": "Table and figure captions",
+      "category": "objects",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "Caption font size should be about 12 pt according to the template.",
+      "page": 26,
+      "evidence": "На рис.1.1 приведена схема функционирования концепции RAG. (14 pt)"
+    },
+    {
+      "rule_id": "references.entries",
+      "title": "References entries",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Recognized references: 151.",
+      "page": 113,
+      "evidence": null
+    },
+    {
+      "rule_id": "references.minimum_entries",
+      "title": "References volume",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "References list has 151 recognized entries.",
+      "page": 113,
+      "evidence": null
+    },
+    {
+      "rule_id": "references.citations",
+      "title": "References citations",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "In-text references like [1] were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.required_fields",
+      "title": "PDF metadata",
+      "category": "metadata",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "high",
+      "message": "Missing metadata fields: Title, Author, Subject, Keywords",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.placeholders",
+      "title": "Metadata placeholders",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Metadata does not contain obvious template placeholders.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.subject_format",
+      "title": "Metadata Subject phrasing",
+      "category": "metadata",
+      "status": "manual",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Subject metadata is missing; cannot verify the required phrasing.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.file_size",
+      "title": "PDF file size",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "PDF size is within the 8 MB upload limit.",
+      "page": null,
+      "evidence": "3.62 MB"
+    }
+  ],
+  "document": {
+    "version": "1.5",
+    "metadata": {
+      "Title": "",
+      "Author": "",
+      "Subject": "",
+      "Keywords": "",
+      "Creator": "LaTeX with hyperref",
+      "Producer": "MiKTeX pdfTeX-1.40.26"
+    },
+    "num_pages": 191,
+    "file_size": 3797716
+  }
+}

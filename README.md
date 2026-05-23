@@ -1,176 +1,157 @@
-# PDF Strategy Parser
+# SPbPU Thesis PDF Checker
 
-A pure-Python PDF document parser implementing two parsing strategies — **stream** (sequential scan) and **xref** (cross-reference table) — on a shared architectural foundation using the Strategy design pattern. The tool extracts text with positional information and detects tables from PDF files, supporting compressed streams, object streams (ObjStm), and cross-reference streams (XRef stream) as defined in PDF specification versions up to 2.0.
+Программное средство предварительной проверки PDF-файлов выпускных квалификационных работ на соответствие основным требованиям шаблона СПбПУ. Проект вырос из учебного PDF-парсера: низкоуровневый модуль разбора PDF сохранён, но теперь используется как основа для нормализованной модели документа и каталога правил проверки ВКР.
 
-## Authors and Contributors
+Репозиторий: https://github.com/topkaamur/pdf_parser_nir
 
-Main contributor: Egor S. Golev, Bachelor student (3rd year), Peter the Great St. Petersburg Polytechnic University, Institute of Computer Science and Cybersecurity (SPbPU ICSC / ИКНК).
+## Назначение
 
-Advisor and contributor: Vladimir A. Parkhomenko, Senior Lecturer, Peter the Great St. Petersburg Polytechnic University, Institute of Computer Science and Cybersecurity (SPbPU ICSC / ИКНК).
+Средство не заменяет ручной нормоконтроль, а формирует предварительный отчёт о признаках, которые можно извлечь из PDF автоматически:
 
-## Introduction
+- наличие обязательных разделов ВКР;
+- наличие реферата и ключевых слов;
+- наличие оглавления и номеров страниц;
+- формат страницы A4;
+- приближённая оценка полей, кегля и межстрочного интервала;
+- формат подписей таблиц и рисунков;
+- наличие списка источников и внутритекстовых ссылок;
+- заполненность служебных полей PDF;
+- размер PDF-файла.
 
-This project implements a comparative analysis of two PDF parsing strategies:
+Для каждого правила сохраняются статус, категория, степень значимости, достоверность автоматической оценки, страница и подтверждающий фрагмент текста.
 
-- **Stream strategy** (`StreamPdfParser`) — performs sequential scanning of the entire file using regular expressions to locate object markers. It does not depend on the integrity of the cross-reference table, which provides resilience to damaged files.
-- **XRef strategy** (`XRefPdfParser`) — begins parsing from the end of the file by locating the `startxref` marker, then reads the cross-reference table to build an index of object offsets. Additionally extracts document metadata (Title, Author, etc.) from the trailer Info dictionary.
+## Возможности
 
-The project was completed during the preparation of the scientific research work at SPbPU Institute of Computer Science and Cybersecurity (SPbPU ICSC), Higher School of Software Engineering.
+- Разбор PDF без внешних PDF-библиотек.
+- Поддержка стратегий `xref`, `stream` и `auto`.
+- Резервный переход от табличного разбора к последовательному при ошибках структуры PDF.
+- Командная строка для проверки одного документа.
+- Пакетная проверка каталога PDF-файлов.
+- Вывод отчёта в JSON.
+- Автоматизированные проверки низкоуровневого парсера и прикладных правил ВКР.
+- Примеры официальных PDF-документов ВКР в каталоге `vkr_examples`.
 
-The parser operates without external PDF libraries — all parsing logic is implemented from scratch using only the Python standard library (`zlib`, `re`, `dataclasses`, `json`, etc.).
+## Структура проекта
 
-## Project Structure
-
-```
-pdf_parser/
-├── src/                        # Source code
-│   ├── __init__.py             # Package exports
-│   ├── models.py               # Data models: PDFDocument, Page, TextBlock, Table
-│   ├── pdf_objects.py          # PDF object types (PdfDict, PdfStream, PdfReference, etc.)
-│   ├── tokenizer.py            # PDF byte-level tokenizer
-│   ├── parser_base.py          # Abstract base class with shared parsing logic
-│   ├── stream_parser.py        # Stream (sequential scan) strategy
-│   ├── xref_parser.py          # XRef (cross-reference table) strategy
-│   ├── text_extractor.py       # Text extraction from content streams
-│   ├── table_extractor.py      # Table detection from text block geometry
-│   ├── pdf_document.py         # Facade: parse_pdf(), compare_strategies()
-│   └── cli.py                  # Interactive command-line interface
-├── tests/                      # Test suite
-│   ├── conftest.py             # Shared fixtures and PDF builders
-│   ├── test_tokenizer.py       # Tokenizer unit tests
-│   ├── test_pdf_objects.py     # PDF object model tests
-│   ├── test_stream_parser.py   # Stream strategy tests
-│   ├── test_xref_parser.py     # XRef strategy tests
-│   ├── test_pdf_document.py    # Facade integration tests
-│   ├── test_text_extractor.py  # Text extraction tests
-│   ├── test_table_extractor.py # Table extraction tests
-│   ├── test_cli.py             # CLI tests with mocked I/O
-│   ├── test_branch.py          # Branch coverage tests
-│   ├── test_statement.py       # Statement coverage tests
-│   ├── test_boundary_value.py  # Boundary value analysis tests
-│   ├── test_equivalence_partition.py  # Equivalence partitioning tests
-│   ├── test_mutation_killers.py       # Mutation-oriented tests
-│   ├── test_mutation_improvement.py   # Extended mutation tests
-│   └── test_advanced.py        # Advanced pytest/Hamcrest/Mock patterns
-├── benchmarks/                 # Performance benchmarks
-│   ├── run_benchmarks.py       # Benchmark runner (time + memory)
-│   ├── generate_corpus.py      # Corpus generator (ReportLab)
-│   ├── corpus/                 # Generated PDF test corpus
-│   └── results.json            # Benchmark results
-├── data/
-│   ├── input/                  # Sample input configurations
-│   └── output/                 # Sample output files
-├── requirements.txt            # Python dependencies (testing only)
-├── setup.cfg                   # mutmut configuration
-├── pytest.ini                  # pytest configuration
-└── conf.json                   # Example runtime configuration
+```text
+pdf_parser_nir/
+├── src/
+│   ├── pdf_document.py              # фасад разбора PDF и выбора стратегии
+│   ├── parser_base.py               # общая логика стратегий разбора
+│   ├── stream_parser.py             # последовательная стратегия
+│   ├── xref_parser.py               # стратегия таблицы перекрёстных ссылок
+│   ├── text_extractor.py            # извлечение текста и координат
+│   ├── table_extractor.py           # обнаружение таблиц по геометрии текста
+│   └── thesis_checker/
+│       ├── cli.py                   # командная строка проверки ВКР
+│       ├── engine.py                # применение правил и формирование отчёта
+│       ├── models.py                # модели результата проверки
+│       ├── normalizer.py            # нормализация страниц и строк
+│       └── rules/catalog.py         # каталог правил проверки ВКР
+├── tests/                           # автоматизированные проверки
+├── vkr_examples/                    # PDF-документы, использованные для проверки
+├── data/input/sample_config.json    # пример входной конфигурации
+├── data/output/sample_thesis_report.json
+├── requirements.txt                 # зависимости для испытаний
+├── pytest.ini
+└── README.md
 ```
 
-## Instruction
+## Установка
 
-### Prerequisites
-
-- Python 3.10 or higher
-- pip
-
-### Installation
+Требуется Python 3.10 или более новая версия. Рекомендуется использовать изолированное окружение.
 
 ```bash
-# Clone the repository
 git clone https://github.com/topkaamur/pdf_parser_nir.git
 cd pdf_parser_nir
-
-# Install test dependencies
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Usage
-
-#### Interactive CLI
+## Проверка одного PDF-файла
 
 ```bash
-python -m src.cli
+python -m src.thesis_checker.cli check vkr_examples/vkr1.pdf \
+  --strategy auto \
+  --output data/output/vkr1.report.json
 ```
 
-The interactive menu provides options to:
-1. Load a PDF file
-2. Load a JSON configuration
-3. Extract text
-4. Extract tables
-5. Compare parsing strategies (stream vs xref)
-6. Export results to JSON
+Для вывода полного отчёта в стандартный поток можно добавить флаг `--json`:
 
-#### Programmatic API
+```bash
+python -m src.thesis_checker.cli check vkr_examples/vkr1.pdf --json
+```
+
+Код завершения равен `0`, если критические нарушения не обнаружены, и `1`, если отчёт содержит критические замечания.
+
+## Пакетная проверка корпуса
+
+```bash
+python -m src.thesis_checker.cli baseline vkr_examples \
+  --strategy auto \
+  --output-dir baseline_reports
+```
+
+Команда создаёт отдельный JSON-отчёт для каждого PDF-файла и файл `summary.json` с агрегированной статистикой по корпусу.
+
+## Программный интерфейс
+
+```python
+from src.thesis_checker.engine import check_pdf_path
+
+report = check_pdf_path("vkr_examples/vkr1.pdf", strategy="auto")
+print(report.passed)
+print(report.summary())
+```
+
+Низкоуровневый PDF-парсер также доступен отдельно:
 
 ```python
 from src import parse_pdf
 
-with open("document.pdf", "rb") as f:
-    data = f.read()
+with open("vkr_examples/vkr1.pdf", "rb") as file:
+    document = parse_pdf(file.read(), strategy="auto")
 
-# Parse with stream strategy (default)
-doc = parse_pdf(data, strategy="stream")
-
-# Parse with xref strategy
-doc = parse_pdf(data, strategy="xref")
-
-# Access extracted content
-for page in doc.pages:
-    print(f"Page {page.number}: {page.text}")
-    for table in page.tables:
-        print(table.to_list())
+print(document.num_pages)
+print(document.metadata)
 ```
 
-#### JSON Configuration
+## Формат отчёта
 
-Create a `conf.json` file:
+JSON-отчёт содержит:
 
-```json
-{
-    "input_file": "path/to/document.pdf",
-    "strategy": "stream",
-    "extract_text": true,
-    "extract_tables": true,
-    "output_file": "output.json"
-}
-```
+- исходный файл;
+- фактически применённую стратегию разбора;
+- общую сводку по статусам правил;
+- сведения о документе;
+- список результатов правил с пояснениями и подтверждающими фрагментами.
 
-### Running Tests
+Пример выходного файла находится в `data/output/sample_thesis_report.json`.
+
+## Испытания
 
 ```bash
-# Run all tests
 pytest
-
-# Run with coverage report
-pytest --cov=src --cov-report=term-missing
-
-# Run mutation testing
-mutmut run
 ```
 
-### Running Benchmarks
+С покрытием:
 
 ```bash
-# Generate the test corpus (requires ReportLab)
-pip install reportlab
-python benchmarks/generate_corpus.py
-
-# Run benchmarks
-python benchmarks/run_benchmarks.py
+pytest --cov=src --cov-report=term-missing
 ```
 
-## License
+## Примеры PDF
 
-MIT License
+Каталог `vkr_examples` содержит 11 PDF-документов ВКР, на которых выполнялась пакетная проверка. Эти файлы используются как реалистичный корпус для демонстрации работы средства и проверки устойчивости правил на документах разного объёма.
 
-Input datasets used in this repository remain under the original licenses specified by their respective authors and sources.
+## Лицензия
 
-## Warranty
+Проект распространяется по лицензии MIT. Примеры документов используются только для исследовательской и учебной проверки работоспособности программного средства.
 
-The developed software is provided as-is for research purposes. Authors give no warranty regarding fitness for any particular use case. The software is in progress.
+## Источники
 
-## References
-
-1. ISO 32000-2:2020. Document management — Portable document format — Part 2: PDF 2.0. Geneva: ISO, 2020. — 972 p.
-2. Gamma E., Helm R., Johnson R., Vlissides J. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1994. — 395 p.
-3. Šrndić N., Laskov P. Detection of Malicious PDF Files Based on Hierarchical Document Structure. Proc. 20th Annual Network and Distributed System Security Symposium (NDSS). San Diego, 2013. — 16 p.
+1. ISO 32000-2:2020. Document management --- Portable document format --- Part 2: PDF 2.0. Geneva: ISO, 2020.
+2. Adobe Systems Incorporated. PDF Reference, Sixth Edition: Adobe Portable Document Format Version 1.7. San Jose: Adobe Systems Incorporated, 2006.
+3. Stevens D. PDF Explained: The ISO Standard for Document Exchange. O'Reilly Media, 2011.
+4. Python Software Foundation. Python programming language. URL: https://www.python.org/

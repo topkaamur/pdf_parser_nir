@@ -374,7 +374,8 @@ class PdfTokenizer:
             self.pos += 1
 
         length_obj = dictionary.get("Length")
-        if isinstance(length_obj, PdfInteger):
+        has_explicit_length = isinstance(length_obj, PdfInteger)
+        if has_explicit_length:
             length = length_obj.value
             if length < 0:
                 length = 0
@@ -394,9 +395,9 @@ class PdfTokenizer:
         if end_marker_pos != -1 and end_marker_pos - self.pos < 10:
             self.pos = end_marker_pos + 9
 
-        if data.endswith(b"\r\n"):
+        if not has_explicit_length and data.endswith(b"\r\n"):
             data = data[:-2]
-        elif data.endswith(b"\n") or data.endswith(b"\r"):
+        elif not has_explicit_length and (data.endswith(b"\n") or data.endswith(b"\r")):
             data = data[:-1]
 
         return data

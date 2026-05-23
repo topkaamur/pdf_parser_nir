@@ -170,3 +170,5 @@ class TestStreamParserDecodeStream:
         s = PdfStream(d, b"invalid_compressed_data")
         result = parser.decode_stream(s)
         assert isinstance(result, bytes)
+        assert parser.decode_warnings
+        assert "FlateDecode failed" in parser.decode_warnings[-1]

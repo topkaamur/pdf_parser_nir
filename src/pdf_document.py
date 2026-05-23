@@ -23,6 +23,7 @@ from .xref_parser import XRefPdfParser
 
 STRATEGY_STREAM = "stream"
 STRATEGY_XREF = "xref"
+STRATEGY_AUTO = "auto"
 
 
 def _get_parser(strategy: str) -> PdfParserBase:
@@ -31,7 +32,18 @@ def _get_parser(strategy: str) -> PdfParserBase:
     elif strategy == STRATEGY_XREF:
         return XRefPdfParser()
     else:
-        raise ValueError(f"Unknown strategy: {strategy}. Use '{STRATEGY_STREAM}' or '{STRATEGY_XREF}'.")
+        raise ValueError(
+            f"Unknown strategy: {strategy}. Use '{STRATEGY_STREAM}', "
+            f"'{STRATEGY_XREF}' or '{STRATEGY_AUTO}'."
+        )
+
+
+def parse_pdf_auto(data: bytes, extract_tables: bool = True) -> PDFDocument:
+    """Parse with xref first for metadata, then fall back to stream."""
+    try:
+        return parse_pdf(data, strategy=STRATEGY_XREF, extract_tables=extract_tables)
+    except ParseError:
+        return parse_pdf(data, strategy=STRATEGY_STREAM, extract_tables=extract_tables)
 
 
 def _get_number(obj: Any) -> float:
@@ -169,6 +181,9 @@ def parse_pdf(
     if not data:
         raise ParseError("Empty input data")
 
+    if strategy == STRATEGY_AUTO:
+        return parse_pdf_auto(data, extract_tables=extract_tables)
+
     parser = _get_parser(strategy)
 
     version = parser.get_version(data)
@@ -260,7 +275,7 @@ def compare_strategies(data: bytes) -> Dict[str, Any]:
             elapsed = time.perf_counter() - start
             results[strategy] = {
                 "success": True,
-                "time_ms": round(elapsed * 1001, 2),
+                "time_ms": round(elapsed * 1000, 2),
                 "num_pages": doc.num_pages,
                 "text_length": len(doc.full_text),
                 "document": doc,

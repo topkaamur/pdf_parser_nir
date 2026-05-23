@@ -1,7 +1,6 @@
 {
-  "input_file": "data/input/sample.pdf",
-  "strategy": "stream",
-  "extract_text": true,
-  "extract_tables": true,
-  "output_file": "data/output/result.json"
+  "input_file": "vkr_examples/vkr1.pdf",
+  "strategy": "auto",
+  "extract_tables": false,
+  "output_file": "data/output/vkr1.report.json"
 }
