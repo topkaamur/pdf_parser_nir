@@ -109,30 +109,6 @@
       "ci95_high_ms": 5066.83,
       "min_ms": 4850.9,
       "max_ms": 5226.33
-    },
-    "vkr10": {
-      "runs": 25,
-      "pages": 57,
-      "mean_ms": 1196.91,
-      "std_ms": 39.96,
-      "variance_ms2": 1597.2,
-      "ci95_half_ms": 16.5,
-      "ci95_low_ms": 1180.41,
-      "ci95_high_ms": 1213.4,
-      "min_ms": 1129.99,
-      "max_ms": 1298.4
-    },
-    "vkr11": {
-      "runs": 25,
-      "pages": 57,
-      "mean_ms": 619.47,
-      "std_ms": 24.42,
-      "variance_ms2": 596.21,
-      "ci95_half_ms": 10.08,
-      "ci95_low_ms": 609.39,
-      "ci95_high_ms": 629.55,
-      "min_ms": 584.91,
-      "max_ms": 663.78
     }
   }
 }
