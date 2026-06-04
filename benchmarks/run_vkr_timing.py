@@ -1,6 +1,6 @@
 """Замер времени проверки ВКР: 25 повторов на каждый документ.
 
-Для каждого PDF-файла из каталога vkr_examples выполняется проверка
+Для каждого PDF-файла из переданного каталога выполняется проверка
 ``check_pdf_bytes(..., strategy="auto")`` RUNS раз. Байты файла читаются
 один раз, чтобы исключить влияние дисковых операций. По выборке времени
 вычисляются: среднее, выборочная дисперсия, СКО и 95% доверительный
@@ -22,7 +22,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from src.thesis_checker.engine import check_pdf_bytes
 
-EXAMPLES_DIR = os.path.join(os.path.dirname(__file__), "..", "vkr_examples")
 RESULTS_PATH = os.path.join(os.path.dirname(__file__), "vkr_timing.json")
 RUNS = 25
 STRATEGY = "auto"
@@ -67,12 +66,21 @@ def measure_file(data: bytes, runs: int = RUNS) -> dict:
 
 
 def main() -> None:
+    if len(sys.argv) != 2:
+        print("Использование: python benchmarks/run_vkr_timing.py <каталог_с_pdf>")
+        return
+
+    corpus_dir = sys.argv[1]
+    if not os.path.isdir(corpus_dir):
+        print(f"Каталог не найден: {corpus_dir}")
+        return
+
     files = sorted(
-        (f for f in os.listdir(EXAMPLES_DIR) if f.lower().endswith(".pdf")),
+        (f for f in os.listdir(corpus_dir) if f.lower().endswith(".pdf")),
         key=natural_key,
     )
     if not files:
-        print("В каталоге vkr_examples нет PDF-файлов.")
+        print(f"В каталоге нет PDF-файлов: {corpus_dir}")
         return
 
     results = {"runs": RUNS, "strategy": STRATEGY, "documents": {}}
@@ -85,7 +93,7 @@ def main() -> None:
     print("-" * len(header))
 
     for fname in files:
-        fpath = os.path.join(EXAMPLES_DIR, fname)
+        fpath = os.path.join(corpus_dir, fname)
         with open(fpath, "rb") as fh:
             data = fh.read()
         stats = measure_file(data)

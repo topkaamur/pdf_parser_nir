@@ -1,11 +1,11 @@
 {
-  "source_file": "/path/to/thesis.pdf",
+  "source_file": "https://elib.spbstu.ru/dl/3/2025/vr/vr25-457.pdf/info",
   "strategy": "xref",
-  "passed": true,
+  "passed": false,
   "summary": {
-    "pass": 23,
-    "fail": 0,
-    "warn": 2,
+    "pass": 19,
+    "fail": 2,
+    "warn": 4,
     "manual": 1
   },
   "results": [
@@ -27,7 +27,7 @@
       "status": "pass",
       "severity": "info",
       "confidence": "high",
-      "message": "The document has 191 pages.",
+      "message": "The document has 100 pages.",
       "page": null,
       "evidence": null
     },
@@ -94,8 +94,8 @@
       "severity": "info",
       "confidence": "high",
       "message": "Appendix section was found.",
-      "page": 8,
-      "evidence": "Приложение 1. Руководство по настройке и запуску разработанной системы 119"
+      "page": 7,
+      "evidence": "Приложение 1. Исходный код приложения ................................................... 44"
     },
     {
       "rule_id": "summary.presence",
@@ -112,32 +112,32 @@
       "rule_id": "summary.keywords_ru",
       "title": "Russian keywords",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Keyword phrase count is valid: 4.",
+      "message": "Expected 3-5 keyword phrases and 3-15 words total; found phrases=4, words=17.",
       "page": 4,
-      "evidence": "КЛЮЧЕВЫЕ СЛОВА: АВТОМАТИЗИРОВАННОЕ ТЕСТИРОВАНИЕ, LLM,"
+      "evidence": "КЛЮЧЕВЫЕ СЛОВА: РАСПРЕДЕЛЕННЫЕ СИСТЕМЫ, APACHE IGNITE,"
     },
     {
       "rule_id": "summary.keywords_en",
       "title": "English keywords",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Keyword phrase count is valid: 4.",
+      "message": "Expected 3-5 keyword phrases and 3-15 words total; found phrases=4, words=18.",
       "page": 4,
-      "evidence": "KEYWORDS: AUTOMATED TESTING, LLM, RAG, CI."
+      "evidence": "KEYWORDS: DISTRIBUTED SYSTEMS, APACHE IGNITE, CONFIGURATION,"
     },
     {
       "rule_id": "summary.abstract_length",
       "title": "Abstract length",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "Russian abstract length is within 1000-1500 chars: 1385.",
+      "status": "manual",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "The Russian abstract text could not be isolated reliably.",
       "page": null,
       "evidence": null
     },
@@ -156,12 +156,12 @@
       "rule_id": "contents.page_numbers",
       "title": "Contents page numbers",
       "category": "contents",
-      "status": "pass",
-      "severity": "info",
+      "status": "warn",
+      "severity": "warning",
       "confidence": "medium",
-      "message": "Contents entries include page numbers.",
-      "page": 6,
-      "evidence": null
+      "message": "A contents entry does not end with a page number.",
+      "page": 8,
+      "evidence": "ВВЕДЕНИЕ"
     },
     {
       "rule_id": "format.page_size",
@@ -189,10 +189,10 @@
       "rule_id": "format.font_size",
       "title": "Main font size",
       "category": "formatting",
-      "status": "pass",
-      "severity": "info",
+      "status": "warn",
+      "severity": "warning",
       "confidence": "medium",
-      "message": "Dominant font size is close to 14 pt: 14.",
+      "message": "Dominant font size differs from 14 pt and needs visual review: 12.",
       "page": null,
       "evidence": null
     },
@@ -200,10 +200,10 @@
       "rule_id": "format.line_spacing",
       "title": "Line spacing",
       "category": "formatting",
-      "status": "pass",
-      "severity": "info",
+      "status": "warn",
+      "severity": "warning",
       "confidence": "low",
-      "message": "Typical line gap looks like 1.5 spacing for 14 pt text: 20.88 pt.",
+      "message": "Typical line gap needs review: 16.18 pt.",
       "page": null,
       "evidence": null
     },
@@ -215,8 +215,8 @@
       "severity": "warning",
       "confidence": "low",
       "message": "Caption font size should be about 12 pt according to the template.",
-      "page": 26,
-      "evidence": "На рис.1.1 приведена схема функционирования концепции RAG. (14 pt)"
+      "page": 15,
+      "evidence": "решений была составлена таблица 1.1. (14 pt)"
     },
     {
       "rule_id": "references.entries",
@@ -225,8 +225,8 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "Recognized references: 151.",
-      "page": 113,
+      "message": "Recognized references: 38.",
+      "page": 42,
       "evidence": null
     },
     {
@@ -236,8 +236,8 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "References list has 151 recognized entries.",
-      "page": 113,
+      "message": "References list has 38 recognized entries.",
+      "page": 42,
       "evidence": null
     },
     {
@@ -255,10 +255,10 @@
       "rule_id": "metadata.required_fields",
       "title": "PDF metadata",
       "category": "metadata",
-      "status": "warn",
-      "severity": "warning",
+      "status": "pass",
+      "severity": "info",
       "confidence": "high",
-      "message": "Missing metadata fields: Title, Author, Subject, Keywords",
+      "message": "Core metadata fields are filled.",
       "page": null,
       "evidence": null
     },
@@ -277,12 +277,12 @@
       "rule_id": "metadata.subject_format",
       "title": "Metadata Subject phrasing",
       "category": "metadata",
-      "status": "manual",
+      "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "Subject metadata is missing; cannot verify the required phrasing.",
+      "message": "Subject metadata mentions a graduate qualification work.",
       "page": null,
-      "evidence": null
+      "evidence": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: %thesisSpecialtyCodeAndTitle. "
     },
     {
       "rule_id": "metadata.file_size",
@@ -293,20 +293,20 @@
       "confidence": "high",
       "message": "PDF size is within the 8 MB upload limit.",
       "page": null,
-      "evidence": "3.62 MB"
+      "evidence": "2.79 MB"
     }
   ],
   "document": {
     "version": "1.5",
     "metadata": {
-      "Title": "",
-      "Author": "",
-      "Subject": "",
-      "Keywords": "",
-      "Creator": "LaTeX with hyperref",
-      "Producer": "MiKTeX pdfTeX-1.40.26"
+      "Title": "Автоматическая оптимизация конфигурации кластера распределенной базы данных Apache Ignite",
+      "Author": "Шергалис Филипп Витальевич",
+      "Subject": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: %thesisSpecialtyCodeAndTitle. ",
+      "Keywords": "Распределенные системы, Apache Ignite, Конфигурация, Оптимизация",
+      "Creator": "LaTeX, SPbPU-student-thesis-template",
+      "Producer": ""
     },
-    "num_pages": 191,
-    "file_size": 3797716
+    "num_pages": 100,
+    "file_size": 2921725
   }
 }

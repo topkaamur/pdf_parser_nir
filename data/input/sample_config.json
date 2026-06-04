@@ -1,6 +1,6 @@
 {
-  "input_file": "vkr_examples/vkr1.pdf",
+  "input_file": "/path/to/thesis.pdf",
   "strategy": "auto",
   "extract_tables": false,
-  "output_file": "data/output/vkr1.report.json"
+  "output_file": "data/output/report.json"
 }

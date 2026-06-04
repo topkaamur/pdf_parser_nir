@@ -1,0 +1,312 @@
+{
+  "source_file": "https://elib.spbstu.ru/dl/3/2025/vr/vr25-481.pdf/info",
+  "strategy": "xref",
+  "passed": true,
+  "summary": {
+    "pass": 22,
+    "fail": 0,
+    "warn": 4,
+    "manual": 0
+  },
+  "results": [
+    {
+      "rule_id": "document.not_empty",
+      "title": "Document content",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The PDF contains pages and extractable text.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "document.page_count",
+      "title": "Page count",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The document has 179 pages.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.required_order",
+      "title": "Required thesis structure",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Required sections were found in the expected order.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "document.empty_pages",
+      "title": "Empty pages",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "No empty pages were detected.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.title_page",
+      "title": "Title page",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The first page looks like an SPbPU title page.",
+      "page": 1,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.title_page_number",
+      "title": "Title page numbering",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "No visible page number was detected on the title page.",
+      "page": 1,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.chapters",
+      "title": "Main chapters",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Main chapters or numbered sections were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.appendix",
+      "title": "Appendices",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Appendix section was found.",
+      "page": 6,
+      "evidence": "Приложение 1. Код разработанного плагина ................................................ 57"
+    },
+    {
+      "rule_id": "summary.presence",
+      "title": "Abstract block",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Abstract, Russian keywords and English keywords were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "summary.keywords_ru",
+      "title": "Russian keywords",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Keyword phrase count is valid: 4.",
+      "page": 3,
+      "evidence": "КЛЮЧЕВЫЕ СЛОВА: СОВМЕСТНЫЕ ТАБЛИЧНЫЕ ТЕХНОЛОГИИ, РА­"
+    },
+    {
+      "rule_id": "summary.keywords_en",
+      "title": "English keywords",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Keyword phrase count is valid: 4.",
+      "page": 3,
+      "evidence": "KEYWORDS: COLLABORATIVE SPREADSHEET, WORK IN MOODLE,"
+    },
+    {
+      "rule_id": "summary.abstract_length",
+      "title": "Abstract length",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Russian abstract length is within 1000-1500 chars: 1345.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "contents.required_items",
+      "title": "Contents items",
+      "category": "contents",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Contents and main rubric markers were found.",
+      "page": 5,
+      "evidence": "СОДЕРЖАНИЕ"
+    },
+    {
+      "rule_id": "contents.page_numbers",
+      "title": "Contents page numbers",
+      "category": "contents",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "medium",
+      "message": "A contents entry does not end with a page number.",
+      "page": 7,
+      "evidence": "ВВЕДЕНИЕ"
+    },
+    {
+      "rule_id": "format.page_size",
+      "title": "A4 page size",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "All pages match A4 within tolerance.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.margins",
+      "title": "Page margins",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Coarse margin check found no obvious problems.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.font_size",
+      "title": "Main font size",
+      "category": "formatting",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "medium",
+      "message": "Dominant font size differs from 14 pt and needs visual review: 12.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.line_spacing",
+      "title": "Line spacing",
+      "category": "formatting",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "Typical line gap needs review: 16.18 pt.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "objects.captions",
+      "title": "Table and figure captions",
+      "category": "objects",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "Caption font size should be about 12 pt according to the template.",
+      "page": 20,
+      "evidence": "есть возможность оценивать прикрепленные к студентам ячейки рис.2.1. (14 pt)"
+    },
+    {
+      "rule_id": "references.entries",
+      "title": "References entries",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Recognized references: 47.",
+      "page": 55,
+      "evidence": null
+    },
+    {
+      "rule_id": "references.minimum_entries",
+      "title": "References volume",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "References list has 47 recognized entries.",
+      "page": 55,
+      "evidence": null
+    },
+    {
+      "rule_id": "references.citations",
+      "title": "References citations",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "In-text references like [1] were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.required_fields",
+      "title": "PDF metadata",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Core metadata fields are filled.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.placeholders",
+      "title": "Metadata placeholders",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Metadata does not contain obvious template placeholders.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.subject_format",
+      "title": "Metadata Subject phrasing",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Subject metadata mentions a graduate qualification work.",
+      "page": null,
+      "evidence": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: 09.03.03 Прикладная информатика. Целью работы является разработка плагина для совместной работы с электронными таблицами в Moodle. Объект исследования – платформа для дистанционного обучения Moodle. Предмет исследования – табличные технологии и средства совместной работы. Основными методами проведения работы являются методы системного анализа и синтез, а также методы графического проектирования и процедурного программирования. В данной работе предоставлен процесс разработки плагина на базе платформы Moodle с использованием технологий PHP, JavaScript, MySQL. Проведено исследование возможностей Moodle в сфере табличных технологий и возможности совместной работы в реальном времени. Проанализированы современные табличные технологии, и произведено сравнение этих технологий с возможностями разрабатываемого плагина. Изучена технология проектирования и разработки плагинов в Moodle. Спроектирован и разработан плагин для совместной работы с электронными таблицами с применением веб-сокета для передачи и обновления данных на странице, и возможностью привязки и сокрытия ячеек для отдельных пользователей. Проведено тестирование и апробация плагина на группе из 6 человек. Разработанный плагин может быть использован в дальнейшем для организации учебного процесса, или составления заданий для студентов на курсе. "
+    },
+    {
+      "rule_id": "metadata.file_size",
+      "title": "PDF file size",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "PDF size is within the 8 MB upload limit.",
+      "page": null,
+      "evidence": "3.03 MB"
+    }
+  ],
+  "document": {
+    "version": "1.5",
+    "metadata": {
+      "Title": "Разработка плагина совместной электронной таблицы в Moodle",
+      "Author": "Мазур Егор Николаевич",
+      "Subject": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: 09.03.03 Прикладная информатика. Целью работы является разработка плагина для совместной работы с электронными таблицами в Moodle. Объект исследования – платформа для дистанционного обучения Moodle. Предмет исследования – табличные технологии и средства совместной работы. Основными методами проведения работы являются методы системного анализа и синтез, а также методы графического проектирования и процедурного программирования. В данной работе предоставлен процесс разработки плагина на базе платформы Moodle с использованием технологий PHP, JavaScript, MySQL. Проведено исследование возможностей Moodle в сфере табличных технологий и возможности совместной работы в реальном времени. Проанализированы современные табличные технологии, и произведено сравнение этих технологий с возможностями разрабатываемого плагина. Изучена технология проектирования и разработки плагинов в Moodle. Спроектирован и разработан плагин для совместной работы с электронными таблицами с применением веб-сокета для передачи и обновления данных на странице, и возможностью привязки и сокрытия ячеек для отдельных пользователей. Проведено тестирование и апробация плагина на группе из 6 человек. Разработанный плагин может быть использован в дальнейшем для организации учебного процесса, или составления заданий для студентов на курсе. ",
+      "Keywords": "СОВМЕСТНЫЕ ТАБЛИЧНЫЕ ТЕХНОЛОГИИ, РАБОТА В MOODLE, PHP, веб-сокет",
+      "Creator": "LaTeX, SPbPU-student-thesis-template",
+      "Producer": "pdfTeX-1.40.26"
+    },
+    "num_pages": 179,
+    "file_size": 3175287
+  }
+}

@@ -56,8 +56,9 @@ pdf_parser_nir/
 │       └── rules/catalog.py         # каталог правил проверки ВКР
 ├── tests/                           # автоматизированные испытания
 ├── benchmarks/                      # сценарии измерения времени проверки
-├── baseline_reports/                # JSON-отчёты пакетной проверки (пример)
-├── reports/                         # опубликованный отчёт по корпусу ВКР
+├── reports/                         # опубликованные результаты эксперимента
+│   ├── experiment_report.md
+│   └── baseline_reports/            # JSON-отчёты пакетной проверки
 ├── data/input/sample_config.json    # пример входной конфигурации
 ├── data/output/sample_thesis_report.json
 ├── requirements.txt                 # зависимости для испытаний
@@ -108,10 +109,10 @@ python -m src.thesis_checker.cli check /путь/к/документу.pdf --jso
 ```bash
 python -m src.thesis_checker.cli baseline /путь/к/каталогу \
   --strategy auto \
-  --output-dir baseline_reports
+  --output-dir reports/baseline_reports
 ```
 
-Команда формирует отдельный JSON-отчёт для каждого PDF-файла и сводный файл `summary.json`. Пример агрегированных результатов приведён в каталоге `baseline_reports`; количественные показатели эксперимента — в [`reports/experiment_report.md`](reports/experiment_report.md).
+Команда формирует отдельный JSON-отчёт для каждого PDF-файла и сводный файл `summary.json`. Пример агрегированных результатов приведён в каталоге [`reports/baseline_reports`](reports/baseline_reports); количественные показатели эксперимента — в [`reports/experiment_report.md`](reports/experiment_report.md).
 
 Опубликованный отчёт по эксперименту находится в [`reports/experiment_report.md`](reports/experiment_report.md). В нём приведены:
 

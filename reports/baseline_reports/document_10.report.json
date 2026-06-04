@@ -1,12 +1,12 @@
 {
-  "source_file": "/path/to/thesis.pdf",
-  "strategy": "xref",
-  "passed": true,
+  "source_file": "https://elib.spbstu.ru/dl/3/2025/vr/vr25-2680.pdf/info",
+  "strategy": "stream",
+  "passed": false,
   "summary": {
-    "pass": 23,
-    "fail": 0,
+    "pass": 9,
+    "fail": 7,
     "warn": 2,
-    "manual": 1
+    "manual": 4
   },
   "results": [
     {
@@ -27,7 +27,7 @@
       "status": "pass",
       "severity": "info",
       "confidence": "high",
-      "message": "The document has 191 pages.",
+      "message": "The document has 57 pages.",
       "page": null,
       "evidence": null
     },
@@ -35,10 +35,10 @@
       "rule_id": "structure.required_order",
       "title": "Required thesis structure",
       "category": "structure",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Required sections were found in the expected order.",
+      "message": "Required sections were not found: title, task, summary, contents, introduction, conclusion, references",
       "page": null,
       "evidence": null
     },
@@ -57,10 +57,10 @@
       "rule_id": "structure.title_page",
       "title": "Title page",
       "category": "structure",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "The first page looks like an SPbPU title page.",
+      "message": "The first page does not contain expected title-page markers.",
       "page": 1,
       "evidence": null
     },
@@ -90,21 +90,21 @@
       "rule_id": "structure.appendix",
       "title": "Appendices",
       "category": "structure",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "high",
-      "message": "Appendix section was found.",
-      "page": 8,
-      "evidence": "Приложение 1. Руководство по настройке и запуску разработанной системы 119"
+      "status": "manual",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "Appendices were not found. This is acceptable if the thesis does not require them.",
+      "page": null,
+      "evidence": null
     },
     {
       "rule_id": "summary.presence",
       "title": "Abstract block",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Abstract, Russian keywords and English keywords were found.",
+      "message": "The complete abstract block was not found: abstract, Russian keywords, Keywords.",
       "page": null,
       "evidence": null
     },
@@ -112,55 +112,44 @@
       "rule_id": "summary.keywords_ru",
       "title": "Russian keywords",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Keyword phrase count is valid: 4.",
-      "page": 4,
-      "evidence": "КЛЮЧЕВЫЕ СЛОВА: АВТОМАТИЗИРОВАННОЕ ТЕСТИРОВАНИЕ, LLM,"
+      "message": "Russian keywords block was not found.",
+      "page": null,
+      "evidence": null
     },
     {
       "rule_id": "summary.keywords_en",
       "title": "English keywords",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Keyword phrase count is valid: 4.",
-      "page": 4,
-      "evidence": "KEYWORDS: AUTOMATED TESTING, LLM, RAG, CI."
+      "message": "Expected 3-5 keyword phrases and 3-15 words total; found phrases=6, words=110.",
+      "page": 5,
+      "evidence": "KEYWORDS:  AUTONATION,  WORK  TIME  TRA CKER,  DATA"
     },
     {
       "rule_id": "summary.abstract_length",
       "title": "Abstract length",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "Russian abstract length is within 1000-1500 chars: 1385.",
+      "status": "manual",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "The Russian abstract text could not be isolated reliably.",
       "page": null,
       "evidence": null
     },
     {
-      "rule_id": "contents.required_items",
-      "title": "Contents items",
+      "rule_id": "contents.presence",
+      "title": "Contents",
       "category": "contents",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "Contents and main rubric markers were found.",
-      "page": 6,
-      "evidence": "СОДЕРЖАНИЕ"
-    },
-    {
-      "rule_id": "contents.page_numbers",
-      "title": "Contents page numbers",
-      "category": "contents",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "Contents entries include page numbers.",
-      "page": 6,
+      "status": "fail",
+      "severity": "error",
+      "confidence": "high",
+      "message": "Contents section was not found.",
+      "page": null,
       "evidence": null
     },
     {
@@ -178,10 +167,10 @@
       "rule_id": "format.margins",
       "title": "Page margins",
       "category": "formatting",
-      "status": "pass",
-      "severity": "info",
+      "status": "warn",
+      "severity": "warning",
       "confidence": "medium",
-      "message": "Coarse margin check found no obvious problems.",
+      "message": "Text coordinates may violate the A4 margin profile: p20 (left=64pt)",
       "page": null,
       "evidence": null
     },
@@ -203,7 +192,7 @@
       "status": "pass",
       "severity": "info",
       "confidence": "low",
-      "message": "Typical line gap looks like 1.5 spacing for 14 pt text: 20.88 pt.",
+      "message": "Typical line gap looks like 1.5 spacing for 14 pt text: 24.12 pt.",
       "page": null,
       "evidence": null
     },
@@ -211,65 +200,32 @@
       "rule_id": "objects.captions",
       "title": "Table and figure captions",
       "category": "objects",
-      "status": "warn",
+      "status": "manual",
       "severity": "warning",
       "confidence": "low",
-      "message": "Caption font size should be about 12 pt according to the template.",
-      "page": 26,
-      "evidence": "На рис.1.1 приведена схема функционирования концепции RAG. (14 pt)"
-    },
-    {
-      "rule_id": "references.entries",
-      "title": "References entries",
-      "category": "references",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "Recognized references: 151.",
-      "page": 113,
-      "evidence": null
-    },
-    {
-      "rule_id": "references.minimum_entries",
-      "title": "References volume",
-      "category": "references",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "References list has 151 recognized entries.",
-      "page": 113,
-      "evidence": null
-    },
-    {
-      "rule_id": "references.citations",
-      "title": "References citations",
-      "category": "references",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "medium",
-      "message": "In-text references like [1] were found.",
+      "message": "No table or figure captions were found. This is acceptable if there are no objects.",
       "page": null,
       "evidence": null
     },
     {
-      "rule_id": "metadata.required_fields",
+      "rule_id": "references.section",
+      "title": "References section",
+      "category": "references",
+      "status": "fail",
+      "severity": "error",
+      "confidence": "high",
+      "message": "References section was not found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.presence",
       "title": "PDF metadata",
       "category": "metadata",
       "status": "warn",
       "severity": "warning",
-      "confidence": "high",
-      "message": "Missing metadata fields: Title, Author, Subject, Keywords",
-      "page": null,
-      "evidence": null
-    },
-    {
-      "rule_id": "metadata.placeholders",
-      "title": "Metadata placeholders",
-      "category": "metadata",
-      "status": "pass",
-      "severity": "info",
-      "confidence": "high",
-      "message": "Metadata does not contain obvious template placeholders.",
+      "confidence": "medium",
+      "message": "PDF metadata was not found. Use auto/xref strategy for metadata checks.",
       "page": null,
       "evidence": null
     },
@@ -293,20 +249,13 @@
       "confidence": "high",
       "message": "PDF size is within the 8 MB upload limit.",
       "page": null,
-      "evidence": "3.62 MB"
+      "evidence": "1.20 MB"
     }
   ],
   "document": {
     "version": "1.5",
-    "metadata": {
-      "Title": "",
-      "Author": "",
-      "Subject": "",
-      "Keywords": "",
-      "Creator": "LaTeX with hyperref",
-      "Producer": "MiKTeX pdfTeX-1.40.26"
-    },
-    "num_pages": 191,
-    "file_size": 3797716
+    "metadata": {},
+    "num_pages": 57,
+    "file_size": 1261593
   }
 }

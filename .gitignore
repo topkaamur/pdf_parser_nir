@@ -8,3 +8,6 @@ htmlcov/
 .venv/
 baseline_reports/
 *.report.json
+!reports/baseline_reports/
+!reports/baseline_reports/summary.json
+!reports/baseline_reports/*.report.json

@@ -1,11 +1,11 @@
 {
-  "source_file": "/path/to/thesis.pdf",
+  "source_file": "https://elib.spbstu.ru/dl/3/2025/vr/vr25-5199.pdf/info",
   "strategy": "xref",
-  "passed": true,
+  "passed": false,
   "summary": {
-    "pass": 23,
-    "fail": 0,
-    "warn": 2,
+    "pass": 21,
+    "fail": 1,
+    "warn": 3,
     "manual": 1
   },
   "results": [
@@ -27,7 +27,7 @@
       "status": "pass",
       "severity": "info",
       "confidence": "high",
-      "message": "The document has 191 pages.",
+      "message": "The document has 91 pages.",
       "page": null,
       "evidence": null
     },
@@ -94,8 +94,8 @@
       "severity": "info",
       "confidence": "high",
       "message": "Appendix section was found.",
-      "page": 8,
-      "evidence": "Приложение 1. Руководство по настройке и запуску разработанной системы 119"
+      "page": 7,
+      "evidence": "2.4.5 Веб-приложение визуализации на Dash................................................ 24"
     },
     {
       "rule_id": "summary.presence",
@@ -117,7 +117,7 @@
       "confidence": "high",
       "message": "Keyword phrase count is valid: 4.",
       "page": 4,
-      "evidence": "КЛЮЧЕВЫЕ СЛОВА: АВТОМАТИЗИРОВАННОЕ ТЕСТИРОВАНИЕ, LLM,"
+      "evidence": "Ключевые слова: репозиторий, анализ данных, метрики, качество кода"
     },
     {
       "rule_id": "summary.keywords_en",
@@ -127,17 +127,17 @@
       "severity": "info",
       "confidence": "high",
       "message": "Keyword phrase count is valid: 4.",
-      "page": 4,
-      "evidence": "KEYWORDS: AUTOMATED TESTING, LLM, RAG, CI."
+      "page": 5,
+      "evidence": "Keywords: repository, data analysis, metrics, code quality"
     },
     {
       "rule_id": "summary.abstract_length",
       "title": "Abstract length",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "medium",
-      "message": "Russian abstract length is within 1000-1500 chars: 1385.",
+      "message": "Russian abstract length is outside 1000-1500 chars: 2511.",
       "page": null,
       "evidence": null
     },
@@ -149,19 +149,19 @@
       "severity": "info",
       "confidence": "medium",
       "message": "Contents and main rubric markers were found.",
-      "page": 6,
+      "page": 7,
       "evidence": "СОДЕРЖАНИЕ"
     },
     {
       "rule_id": "contents.page_numbers",
       "title": "Contents page numbers",
       "category": "contents",
-      "status": "pass",
-      "severity": "info",
+      "status": "warn",
+      "severity": "warning",
       "confidence": "medium",
-      "message": "Contents entries include page numbers.",
-      "page": 6,
-      "evidence": null
+      "message": "A contents entry does not end with a page number.",
+      "page": 9,
+      "evidence": "ВВЕДЕНИЕ"
     },
     {
       "rule_id": "format.page_size",
@@ -215,8 +215,8 @@
       "severity": "warning",
       "confidence": "low",
       "message": "Caption font size should be about 12 pt according to the template.",
-      "page": 26,
-      "evidence": "На рис.1.1 приведена схема функционирования концепции RAG. (14 pt)"
+      "page": 18,
+      "evidence": "Таким образом, диаграмма Use Case (см. Рис. 1.1) будет содержать три «актора» (14 pt)"
     },
     {
       "rule_id": "references.entries",
@@ -225,8 +225,8 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "Recognized references: 151.",
-      "page": 113,
+      "message": "Recognized references: 31.",
+      "page": 62,
       "evidence": null
     },
     {
@@ -236,8 +236,8 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "References list has 151 recognized entries.",
-      "page": 113,
+      "message": "References list has 31 recognized entries.",
+      "page": 62,
       "evidence": null
     },
     {
@@ -293,7 +293,7 @@
       "confidence": "high",
       "message": "PDF size is within the 8 MB upload limit.",
       "page": null,
-      "evidence": "3.62 MB"
+      "evidence": "2.32 MB"
     }
   ],
   "document": {
@@ -304,9 +304,9 @@
       "Subject": "",
       "Keywords": "",
       "Creator": "LaTeX with hyperref",
-      "Producer": "MiKTeX pdfTeX-1.40.26"
+      "Producer": "pdfTeX-1.40.26"
     },
-    "num_pages": 191,
-    "file_size": 3797716
+    "num_pages": 91,
+    "file_size": 2435519
   }
 }

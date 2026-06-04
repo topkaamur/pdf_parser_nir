@@ -1,12 +1,12 @@
 {
-  "source_file": "/path/to/thesis.pdf",
+  "source_file": "https://elib.spbstu.ru/dl/3/2025/vr/vr25-1505.pdf/info",
   "strategy": "xref",
-  "passed": true,
+  "passed": false,
   "summary": {
     "pass": 23,
-    "fail": 0,
-    "warn": 2,
-    "manual": 1
+    "fail": 2,
+    "warn": 1,
+    "manual": 0
   },
   "results": [
     {
@@ -27,7 +27,7 @@
       "status": "pass",
       "severity": "info",
       "confidence": "high",
-      "message": "The document has 191 pages.",
+      "message": "The document has 122 pages.",
       "page": null,
       "evidence": null
     },
@@ -94,8 +94,8 @@
       "severity": "info",
       "confidence": "high",
       "message": "Appendix section was found.",
-      "page": 8,
-      "evidence": "Приложение 1. Руководство по настройке и запуску разработанной системы 119"
+      "page": 7,
+      "evidence": "Приложение 1 Код приложения..................................................................... 69"
     },
     {
       "rule_id": "summary.presence",
@@ -112,23 +112,23 @@
       "rule_id": "summary.keywords_ru",
       "title": "Russian keywords",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Keyword phrase count is valid: 4.",
+      "message": "Expected 3-5 keyword phrases and 3-15 words total; found phrases=10, words=16.",
       "page": 4,
-      "evidence": "КЛЮЧЕВЫЕ СЛОВА: АВТОМАТИЗИРОВАННОЕ ТЕСТИРОВАНИЕ, LLM,"
+      "evidence": "Ключевые слова: NoSQL, Базы данных, LSM-деревья, Автономные встроен­"
     },
     {
       "rule_id": "summary.keywords_en",
       "title": "English keywords",
       "category": "summary",
-      "status": "pass",
-      "severity": "info",
+      "status": "fail",
+      "severity": "error",
       "confidence": "high",
-      "message": "Keyword phrase count is valid: 4.",
+      "message": "Expected 3-5 keyword phrases and 3-15 words total; found phrases=9, words=15.",
       "page": 4,
-      "evidence": "KEYWORDS: AUTOMATED TESTING, LLM, RAG, CI."
+      "evidence": "Keywords: NoSQL, Data bases, LSM-trees, Local integrated storages, Apache"
     },
     {
       "rule_id": "summary.abstract_length",
@@ -137,7 +137,7 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "Russian abstract length is within 1000-1500 chars: 1385.",
+      "message": "Russian abstract length is within 1000-1500 chars: 1187.",
       "page": null,
       "evidence": null
     },
@@ -156,12 +156,12 @@
       "rule_id": "contents.page_numbers",
       "title": "Contents page numbers",
       "category": "contents",
-      "status": "pass",
-      "severity": "info",
+      "status": "warn",
+      "severity": "warning",
       "confidence": "medium",
-      "message": "Contents entries include page numbers.",
-      "page": 6,
-      "evidence": null
+      "message": "A contents entry does not end with a page number.",
+      "page": 8,
+      "evidence": "ВВЕДЕНИЕ"
     },
     {
       "rule_id": "format.page_size",
@@ -211,12 +211,12 @@
       "rule_id": "objects.captions",
       "title": "Table and figure captions",
       "category": "objects",
-      "status": "warn",
-      "severity": "warning",
-      "confidence": "low",
-      "message": "Caption font size should be about 12 pt according to the template.",
-      "page": 26,
-      "evidence": "На рис.1.1 приведена схема функционирования концепции RAG. (14 pt)"
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Found captions use the expected numbering and approximate caption font size.",
+      "page": null,
+      "evidence": null
     },
     {
       "rule_id": "references.entries",
@@ -225,8 +225,8 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "Recognized references: 151.",
-      "page": 113,
+      "message": "Recognized references: 28.",
+      "page": 67,
       "evidence": null
     },
     {
@@ -236,8 +236,8 @@
       "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "References list has 151 recognized entries.",
-      "page": 113,
+      "message": "References list has 28 recognized entries.",
+      "page": 67,
       "evidence": null
     },
     {
@@ -255,10 +255,10 @@
       "rule_id": "metadata.required_fields",
       "title": "PDF metadata",
       "category": "metadata",
-      "status": "warn",
-      "severity": "warning",
+      "status": "pass",
+      "severity": "info",
       "confidence": "high",
-      "message": "Missing metadata fields: Title, Author, Subject, Keywords",
+      "message": "Core metadata fields are filled.",
       "page": null,
       "evidence": null
     },
@@ -277,12 +277,12 @@
       "rule_id": "metadata.subject_format",
       "title": "Metadata Subject phrasing",
       "category": "metadata",
-      "status": "manual",
+      "status": "pass",
       "severity": "info",
       "confidence": "medium",
-      "message": "Subject metadata is missing; cannot verify the required phrasing.",
+      "message": "Subject metadata mentions a graduate qualification work.",
       "page": null,
-      "evidence": null
+      "evidence": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: 09.03.03 Прикладная информатика. В этой работе исследуются современные подходы к организации эффективных локальных NoSQL-хранилищ на основе LSM-деревьев, с фокусом на Apache Cassandra и RocksDB. Объектом исследования выступают алгоритмы MemTableSSTable и методы компактации. Цель работы – провести обзор существующих архитектур, выявить их преимущества и ограничения, а затем создать Java-библиотеку без внешних зависимостей, оптимизированную для встраиваемых систем и IoT-устройств. Методология включает теоретический анализ LSM-деревьев, сравнительный обзор стратегий записи и компактации, проектирование и реализацию прототипа на Java 8 с CRC-контрольной суммой и Bloom-фильтрами, а также комплексное тестирование: юнит-тесты и нагрузочные стенды на Java, Go+BadgerDB и C++17+RocksDB, в том числе в Docker-контейнере с лимитами 0,5 CPU и 512 MB RAM. По результатам нагрузочных тестов разработка продемонстрировала среднюю задержку записи до 12 µs и чтения до 4 µs при footprint менее 20 MB, а все проверки CRC и консистентности прошли на 100%. Полученный прототип готов к практическому применению в автономных системах с ограниченными ресурсами, таких как IoT-датчики и встроенные контроллеры."
     },
     {
       "rule_id": "metadata.file_size",
@@ -293,20 +293,20 @@
       "confidence": "high",
       "message": "PDF size is within the 8 MB upload limit.",
       "page": null,
-      "evidence": "3.62 MB"
+      "evidence": "2.15 MB"
     }
   ],
   "document": {
     "version": "1.5",
     "metadata": {
-      "Title": "",
-      "Author": "",
-      "Subject": "",
-      "Keywords": "",
-      "Creator": "LaTeX with hyperref",
-      "Producer": "MiKTeX pdfTeX-1.40.26"
+      "Title": "Разработка локального легковесного хранилища на базе LSM-деревьев для автономных Java-проектов",
+      "Author": "Виниченко Даниил Николаевич",
+      "Subject": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: 09.03.03 Прикладная информатика. В этой работе исследуются современные подходы к организации эффективных локальных NoSQL-хранилищ на основе LSM-деревьев, с фокусом на Apache Cassandra и RocksDB. Объектом исследования выступают алгоритмы MemTableSSTable и методы компактации. Цель работы – провести обзор существующих архитектур, выявить их преимущества и ограничения, а затем создать Java-библиотеку без внешних зависимостей, оптимизированную для встраиваемых систем и IoT-устройств. Методология включает теоретический анализ LSM-деревьев, сравнительный обзор стратегий записи и компактации, проектирование и реализацию прототипа на Java 8 с CRC-контрольной суммой и Bloom-фильтрами, а также комплексное тестирование: юнит-тесты и нагрузочные стенды на Java, Go+BadgerDB и C++17+RocksDB, в том числе в Docker-контейнере с лимитами 0,5 CPU и 512 MB RAM. По результатам нагрузочных тестов разработка продемонстрировала среднюю задержку записи до 12 µs и чтения до 4 µs при footprint менее 20 MB, а все проверки CRC и консистентности прошли на 100%. Полученный прототип готов к практическому применению в автономных системах с ограниченными ресурсами, таких как IoT-датчики и встроенные контроллеры.",
+      "Keywords": "NoSQL, Базы данных, LSM-деревья, Автономные встроенные хранилища, Apache Casandra, RocksDB, BadgerDB, Java, Автономные устройства, SSTable,",
+      "Creator": "LaTeX, SPbPU-student-thesis-template",
+      "Producer": "MiKTeX pdfTeX-1.40.27"
     },
-    "num_pages": 191,
-    "file_size": 3797716
+    "num_pages": 122,
+    "file_size": 2251759
   }
 }

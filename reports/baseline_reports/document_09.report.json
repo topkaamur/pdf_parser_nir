@@ -1,0 +1,312 @@
+{
+  "source_file": "https://elib.spbstu.ru/dl/3/2025/vr/vr25-572.pdf/info",
+  "strategy": "xref",
+  "passed": false,
+  "summary": {
+    "pass": 22,
+    "fail": 1,
+    "warn": 3,
+    "manual": 0
+  },
+  "results": [
+    {
+      "rule_id": "document.not_empty",
+      "title": "Document content",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The PDF contains pages and extractable text.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "document.page_count",
+      "title": "Page count",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The document has 153 pages.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.required_order",
+      "title": "Required thesis structure",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Required sections were found in the expected order.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "document.empty_pages",
+      "title": "Empty pages",
+      "category": "document",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "No empty pages were detected.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.title_page",
+      "title": "Title page",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "The first page looks like an SPbPU title page.",
+      "page": 1,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.title_page_number",
+      "title": "Title page numbering",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "No visible page number was detected on the title page.",
+      "page": 1,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.chapters",
+      "title": "Main chapters",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Main chapters or numbered sections were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "structure.appendix",
+      "title": "Appendices",
+      "category": "structure",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Appendix section was found.",
+      "page": 7,
+      "evidence": "Приложение 1. Основные модули фреймворка............................................. 105"
+    },
+    {
+      "rule_id": "summary.presence",
+      "title": "Abstract block",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Abstract, Russian keywords and English keywords were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "summary.keywords_ru",
+      "title": "Russian keywords",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Keyword phrase count is valid: 4.",
+      "page": 4,
+      "evidence": "КЛЮЧЕВЫЕ СЛОВА: СУММАРИЗАЦИЯ ДИАЛОГОВ, БОЛЬШИЕ ЯЗЫ­"
+    },
+    {
+      "rule_id": "summary.keywords_en",
+      "title": "English keywords",
+      "category": "summary",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Keyword phrase count is valid: 4.",
+      "page": 5,
+      "evidence": "KEYWORDS: DIALOGUE SUMMARIZATION, LARGE LANGUAGE"
+    },
+    {
+      "rule_id": "summary.abstract_length",
+      "title": "Abstract length",
+      "category": "summary",
+      "status": "fail",
+      "severity": "error",
+      "confidence": "medium",
+      "message": "Russian abstract length is outside 1000-1500 chars: 1612.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "contents.required_items",
+      "title": "Contents items",
+      "category": "contents",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Contents and main rubric markers were found.",
+      "page": 6,
+      "evidence": "СОДЕРЖАНИЕ"
+    },
+    {
+      "rule_id": "contents.page_numbers",
+      "title": "Contents page numbers",
+      "category": "contents",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "medium",
+      "message": "A contents entry does not end with a page number.",
+      "page": 8,
+      "evidence": "ВВЕДЕНИЕ"
+    },
+    {
+      "rule_id": "format.page_size",
+      "title": "A4 page size",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "All pages match A4 within tolerance.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.margins",
+      "title": "Page margins",
+      "category": "formatting",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "medium",
+      "message": "Text coordinates may violate the A4 margin profile: p91 (bottom≈-70pt)",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.font_size",
+      "title": "Main font size",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Dominant font size is close to 14 pt: 14.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "format.line_spacing",
+      "title": "Line spacing",
+      "category": "formatting",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "low",
+      "message": "Typical line gap looks like 1.5 spacing for 14 pt text: 20.88 pt.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "objects.captions",
+      "title": "Table and figure captions",
+      "category": "objects",
+      "status": "warn",
+      "severity": "warning",
+      "confidence": "low",
+      "message": "Caption font size should be about 12 pt according to the template.",
+      "page": 16,
+      "evidence": "высокие оценки при человеческой оценке рис.1.1 по сравнению с эталонными (14 pt)"
+    },
+    {
+      "rule_id": "references.entries",
+      "title": "References entries",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Recognized references: 55.",
+      "page": 103,
+      "evidence": null
+    },
+    {
+      "rule_id": "references.minimum_entries",
+      "title": "References volume",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "References list has 55 recognized entries.",
+      "page": 103,
+      "evidence": null
+    },
+    {
+      "rule_id": "references.citations",
+      "title": "References citations",
+      "category": "references",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "In-text references like [1] were found.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.required_fields",
+      "title": "PDF metadata",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Core metadata fields are filled.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.placeholders",
+      "title": "Metadata placeholders",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "Metadata does not contain obvious template placeholders.",
+      "page": null,
+      "evidence": null
+    },
+    {
+      "rule_id": "metadata.subject_format",
+      "title": "Metadata Subject phrasing",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "medium",
+      "message": "Subject metadata mentions a graduate qualification work.",
+      "page": null,
+      "evidence": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: 09.03.03 Прикладная информатика. В данной работе объектом исследования выступает процесс автоматической аннотации диалогов на базе LLM. Предмет исследования — методы контекстного обучения и методы RAG для отбора демонстрационных примеров, повышающих качество суммаризации. Цель — разработка методики и фреймворка, позволяющего автоматически формировать обучающие наборы и аннотации с минимальными затратами на ручную разметку, а также оценка его эффективности относительно альтернативных решений. Методологическая основа работы — применение методов машинного обучения, контекстного обучения и механизмов RAG. В ходе исследования проанализированы возможности совместной интеграции контекстного обучения и RAG, проведён сравнительный анализ стратегий отбора демонстраций и реализованы эксперименты на англоязычных, русскоязычных и медицинских диалогах с использованием метрик ROUGE и BERTScore. Результаты подтвердили существенное улучшение качества резюмирования, особенно в узкоспециализированных сценариях, и показали, что предложенный подход может обходиться без масштабной ручной аннотации при формировании обучающих выборок. Разработанный подход применим для автоматической разметки диалогов в колл-центрах, медицинских и иных сервисах, облегчая аннотацию и повышая точность итоговых текстов. Выводы подтверждают, что использование RAG и контекстного обучения LLM повышает качество суммаризаций и упрощает формирование обучающих наборов. Предложенная методика и фреймворк могут быть внедрены в широкий спектр приложений, требующих точной и экономичной диалоговой суммаризации. "
+    },
+    {
+      "rule_id": "metadata.file_size",
+      "title": "PDF file size",
+      "category": "metadata",
+      "status": "pass",
+      "severity": "info",
+      "confidence": "high",
+      "message": "PDF size is within the 8 MB upload limit.",
+      "page": null,
+      "evidence": "2.24 MB"
+    }
+  ],
+  "document": {
+    "version": "1.5",
+    "metadata": {
+      "Title": "Разработка методики для суммаризации диалогов на основе большой языковой модели в условиях дефицита размеченных данных",
+      "Author": "Пенясов Дмитрий Евгеньевич",
+      "Subject": "Выпускная квалификационная работа (работа бакалавра). Шифр и наименование направления подготовки: 09.03.03 Прикладная информатика. В данной работе объектом исследования выступает процесс автоматической аннотации диалогов на базе LLM. Предмет исследования — методы контекстного обучения и методы RAG для отбора демонстрационных примеров, повышающих качество суммаризации. Цель — разработка методики и фреймворка, позволяющего автоматически формировать обучающие наборы и аннотации с минимальными затратами на ручную разметку, а также оценка его эффективности относительно альтернативных решений. Методологическая основа работы — применение методов машинного обучения, контекстного обучения и механизмов RAG. В ходе исследования проанализированы возможности совместной интеграции контекстного обучения и RAG, проведён сравнительный анализ стратегий отбора демонстраций и реализованы эксперименты на англоязычных, русскоязычных и медицинских диалогах с использованием метрик ROUGE и BERTScore. Результаты подтвердили существенное улучшение качества резюмирования, особенно в узкоспециализированных сценариях, и показали, что предложенный подход может обходиться без масштабной ручной аннотации при формировании обучающих выборок. Разработанный подход применим для автоматической разметки диалогов в колл-центрах, медицинских и иных сервисах, облегчая аннотацию и повышая точность итоговых текстов. Выводы подтверждают, что использование RAG и контекстного обучения LLM повышает качество суммаризаций и упрощает формирование обучающих наборов. Предложенная методика и фреймворк могут быть внедрены в широкий спектр приложений, требующих точной и экономичной диалоговой суммаризации. ",
+      "Keywords": "Суммаризация диалогов, большие языковые модели, синтетические данные, дефицит размеченных данных",
+      "Creator": "LaTeX, SPbPU-student-thesis-template",
+      "Producer": "MiKTeX pdfTeX-1.40.26"
+    },
+    "num_pages": 153,
+    "file_size": 2349500
+  }
+}
